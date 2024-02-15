@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Buy Product</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="custom-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="header-wrap">
+        <nav class="primary-nav padding-small">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-2 col-md-2">
+                <div class="main-logo">
+                  <a href="index.html">
+                    <img
+                      src="guitarImages/guitar-logo.jpg"
+                      alt="logo"
+                      height="100"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-10 col-md-10">
+                <div class="navbar">
+                  <div
+                    id="main-nav"
+                    class="stellarnav d-flex justify-content-end right"
+                  >
+                    <ul class="menu-list">
+                      <li class="menu-item has-sub">
+                        <a
+                          href="index.html"
+                          class="item-anchor active d-flex align-item-center"
+                          data-effect="Home"
+                          >Home</a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="index.html"
+                          class="item-anchor"
+                          data-effect="About"
+                          >About</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="index.html"
+                          class="item-anchor"
+                          data-effect="Contact"
+                          >Contact</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="main-content d-flex flex-wrap padding-small">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="feature-image">
+              <img
+                src=""
+                alt="post image"
+                class="jarallax-img"
+                id="product_image"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="post-content">
+              <p id="product-description"></p>
+              <p>
+                <strong id="shipping-details">Are you amazed ?</strong>
+              </p>
+              <div class="item-price text-primary" id="product-price">
+                $40.00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="contact-information padding-xsmall bg-light-grey">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-information">
+              <h3>Purchase Form</h3>
+              <form name="contactform" method="post" class="contact-form" id="purchase_form">
+                <div class="form-item">
+                  <input
+                    type="text"
+                    minlength="2"
+                    name="full_name"
+                    id="full_name"
+                    placeholder="Enter Full Name"
+                    class="u-full-width bg-light"
+                    required
+                  />
+                  <input
+                    type="number"
+                    minlength="2"
+                    name="mobile_no"
+                    id="mobile_no"
+                    placeholder="Mobile No."
+                    class="u-full-width bg-light"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email_id"
+                    id="email_id"
+                    placeholder="E-mail"
+                    class="u-full-width bg-light"
+                    required
+                  />
+                  <textarea class="u-full-width bg-light" name="address" id="address" placeholder="Address" style="height: 100px;" required></textarea>
+                </div>
+                <button
+                  type="button"
+                  name="submit"
+                  class="btn btn-dark btn-full btn-medium"
+                  onclick="submit_purchase_form()"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>           
+          </div>
+          <div class="col-md-6" id="view_summary_details" style="display: none;">
+            <div class="section-header">
+              <h2 class="section-title">Review Summary</h2>
+            </div>
+            <div class="contact-detail">
+              <div class="detail-list">
+                <ul class="list-unstyled list-icon">
+                  <li>
+                    <a><i class="fa-solid fa fa-list"></i><span id="view_full_name"></span></a>
+                  </li>
+                  <li>
+                    <a><i class="icon icon-phone"></i><span id="view_mobile_no"></span></a>
+                  </li>
+                  <li>
+                    <a><i class="icon icon-mail"></i><span id="view_email_id"></span></a>
+                  </li>
+                  <li>
+                    <a><i class="icon icon-map-pin"></i><span id="view_address"></span></a
+                    >
+                  </li>
+                  <button
+                  type="button"
+                  class="btn btn-accent btn-medium" onclick="review_purchase_form()"
+                >Go to Review</button>
+                <button
+                type="button"
+                class="btn btn-primary btn-medium" onclick="click_to_buy()"
+              >Buy</button>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="common.js"></script>
+    <script src="buy_product.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  </body>
+</html>
